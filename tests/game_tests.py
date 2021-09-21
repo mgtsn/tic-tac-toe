@@ -48,6 +48,16 @@ class TestGameWon(unittest.TestCase):
         self.game.board[2] = ["O", "X", "O"]
         self.assertEqual(self.game.finished(), "Tie")
 
+    def testWinDiagonal(self):
+        self.game.board[0] = ["O", "O", "X"]
+        self.game.board[1] = ["X", "O", "X"]
+        self.game.board[2] = ["O", "X", "O"]
+        self.assertEqual(self.game.finished(), "O")
+
+        self.game.board[2][0] = "X"
+        self.game.board[1][1] = "X"
+        self.assertEqual(self.game.finished(), "X")
+
 
 if __name__ == "__main__":
     unittest.main()
