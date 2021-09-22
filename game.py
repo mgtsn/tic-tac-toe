@@ -1,3 +1,7 @@
+from tkinter import *
+from tkinter import ttk
+
+
 class Game:
     def build_board(self, size):
         board = []
@@ -8,8 +12,11 @@ class Game:
             board.append(row)
         return board
 
-    def __init__(self, size):
+    def build_display()
+
+    def __init__(self, size, parent):
         self.size = size
+        self.display = ttk.Frame(parent, padding=10)
         self.board = self.build_board(size)
 
     def _check_column(self, j):
